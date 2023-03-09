@@ -23,7 +23,7 @@ describe("products", () => {
       const response = await request.post("/product").send(requestBody);
 
       expect(response.body).toEqual(expectedResponseBody);
-      expect(typeof response.body.id).toEqual("String");
+      expect(typeof response.body.product.id).toEqual("String");
       expect(new Date().getTime() - new Date(response.body.createdAt).getTime()).toBeLessThan(1000);
       expect(response.statusCode).toEqual(201);
     });
